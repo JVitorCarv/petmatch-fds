@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView
 
 from petmatchapp.models import PetProfile
 
@@ -14,3 +14,8 @@ class PetDetailView(DetailView):
     model = PetProfile
     template_name = "pet_details.html"
     context_object_name = 'PetProfile'
+    
+class AddPetView(CreateView):
+    model = PetProfile
+    template_name = "add_pet.html"
+    fields = '__all__'

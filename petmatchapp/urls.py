@@ -7,5 +7,6 @@ app_name = 'petmatchapp'
 urlpatterns = [
     path("", views.HomePageView.as_view(), name="home"),
     path("pet/<int:pk>", views.PetDetailView.as_view(), name="pet-detail"),
+    path("add/", views.AddPetView.as_view(), name="add-pet"),
 ]
 
