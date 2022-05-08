@@ -12,4 +12,5 @@ class HomePageView(ListView):
 
 class PetDetailView(DetailView):
     model = PetProfile
-    template_name = 'pet_details.html'
+    template_name = "pet_details.html"
+    context_object_name = 'PetProfile'
