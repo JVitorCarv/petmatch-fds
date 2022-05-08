@@ -15,4 +15,4 @@ class PetProfile(models.Model):
         return self.name + ' | ' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse("/")
+        return reverse("petmatchapp:add_pet")
