@@ -1,25 +1,29 @@
-#from asyncio import sleep
-from email.header import Header
-#from turtle import home
 from django.test import LiveServerTestCase
-from requests import options
-#from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 import time
 
 class testHome(LiveServerTestCase):
 
     def test(self):
-        driver = webdriver.Chrome()
-        driver.get('http://127.0.0.1:8000/')
+
+        options = webdriver.ChromeOptions()
+
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        driver.get('https://pet-match-fds.herokuapp.com')
 
         assert 'PetMatch' in driver.title
         time.sleep(2)
 
 class invalidLog(LiveServerTestCase):
     def testInvalid(self):
-        driver = webdriver.Chrome()
-        driver.get('http://127.0.0.1:8000/accounts/login/')
+        options = webdriver.ChromeOptions()
+
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
         
         user_name = driver.find_element_by_id('id_login')
         password = driver.find_element_by_id('id_password')
@@ -31,16 +35,22 @@ class invalidLog(LiveServerTestCase):
 
 class blankLog(LiveServerTestCase):
     def testBlank(self):
-        driver = webdriver.Chrome()
-        driver.get('http://127.0.0.1:8000/accounts/login/')
+        options = webdriver.ChromeOptions()
+
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
 
         driver.find_element_by_class_name('btn-success').click() 
 
 class testSignup(LiveServerTestCase):
 
     def testSign(self):
-        driver = webdriver.Chrome()
-        driver.get('http://127.0.0.1:8000/accounts/signup/')
+        options = webdriver.ChromeOptions()
+
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        driver.get('https://pet-match-fds.herokuapp.com/accounts/signup/')
 
         user_name = driver.find_element_by_id('id_username')
         email = driver.find_element_by_id('id_email')
@@ -57,8 +67,11 @@ class testSignup(LiveServerTestCase):
 class testLogin(LiveServerTestCase):
 
     def testLog(self):
-        driver = webdriver.Chrome()
-        driver.get('http://127.0.0.1:8000/accounts/login/')
+        options = webdriver.ChromeOptions()
+
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
 
         user_name = driver.find_element_by_id('id_login')
         password = driver.find_element_by_id('id_password')
