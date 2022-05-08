@@ -1,0 +1,14 @@
+<!-- Ainda não foi implementada, a ser implementada -->
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Delete pet{{PetProfile.name}}{% endblock %}
+
+{% block content %}
+    <h2>Are you sure that you want to delete {{PetProfile.name}}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-success" type="submit">Delete</button>
+    </form>
+{% endblock %}

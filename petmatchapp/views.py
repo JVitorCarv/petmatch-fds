@@ -1,4 +1,5 @@
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
 
 from petmatchapp.models import PetProfile
 
@@ -19,3 +20,16 @@ class AddPetView(CreateView):
     model = PetProfile
     template_name = "add_pet.html"
     fields = '__all__'
+
+#Ainda não foi implementada, a ser implementada
+
+'''
+class UpdatePet(UpdateView):
+    model = PetProfile
+    template_name = "update_pet.html"
+    fields = ['name', 'age', 'bio']
+    
+'''
+class DeletePetView(DeleteView):
+    model = PetProfile
+    template_name = "delete_pet.html"

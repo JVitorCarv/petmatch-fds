@@ -1,1 +1,18 @@
-<h1>Add</h1>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Add pet{% endblock %}
+
+{% block content %}
+    {%if user.is_authenticated %}
+        <h2>Add Pet</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <a href = "/" class="btn btn-success" type="submit">Add</a>
+        </form>
+    {% else %}
+        <h3>You need to be logged in to add a pet</h3>
+    {% endif %}
+{% endblock %}

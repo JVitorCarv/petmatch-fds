@@ -8,8 +8,8 @@
     {% load account %}
     <h1>Welcome back, {% user_display user %}!</h1>
     {% for PetProfile in object_list %}
-        <a href="/pet/{{PetProfile.pk}}">{{PetProfile.name}}</a> - {{PetProfile.author}}<br>
-        {{PetProfile.bio}}<br>
+        <a href="/pet/{{PetProfile.pk}}">{{PetProfile.name}}</a> - {{PetProfile.author}}
+        <br>
     {% endfor %}
 </div>
 {% else %}
