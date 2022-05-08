@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ PetProfile.name }}{% endblock %}
+
+{% block content %}
+    <h2>{{PetProfile.name}}</h2>
+    <small>Owner: {{PetProfile.author}}</small>
+    <p>Age: {{PetProfile.age}}</p>
+    <p>Race: {{PetProfile.race}}</p>
+    <p>Bio: {{PetProfile.bio}}</p>
+{% endblock %}

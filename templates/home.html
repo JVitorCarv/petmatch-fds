@@ -7,6 +7,10 @@
 <div class="col-8 m-auto pt-2 pb-2 text-center">
     {% load account %}
     <h1>Welcome back, {% user_display user %}!</h1>
+    {% for PetProfile in object_list %}
+        <a href="{% url 'article-detail' PetProfile.pk %}{{PetProfile.name}} - {{PetProfile.author}}<br>
+        {{PetProfile.bio}}
+    {% endfor %}
 </div>
 {% else %}
 <div class="col-8 m-auto pt-2 pb-2 text-center">
