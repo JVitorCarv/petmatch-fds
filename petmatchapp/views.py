@@ -3,6 +3,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from petmatchapp.models import PetProfile
 
+from .forms import PetProfileForm
 from .models import PetProfile
 
 
@@ -18,8 +19,8 @@ class PetDetailView(DetailView):
     
 class AddPetView(CreateView):
     model = PetProfile
+    form_class = PetProfileForm
     template_name = "add_pet.html"
-    fields = '__all__'
 
 #Ainda não foi implementada, a ser implementada
 
@@ -29,7 +30,7 @@ class UpdatePet(UpdateView):
     template_name = "update_pet.html"
     fields = ['name', 'age', 'bio']
     
-'''
 class DeletePetView(DeleteView):
     model = PetProfile
     template_name = "delete_pet.html"
+'''
