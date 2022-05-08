@@ -15,4 +15,5 @@ class PetProfile(models.Model):
         return self.name + ' | ' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse("petmatchapp:add_pet")
+        return reverse("petmatchapp:pet_detail", kwargs={"pk": self.pk})
+    
