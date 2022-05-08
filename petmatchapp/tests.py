@@ -7,11 +7,7 @@ import time
 class testHome(LiveServerTestCase):
 
     def test(self):
-
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         driver.get('https://pet-match-fds.herokuapp.com')
 
@@ -20,10 +16,7 @@ class testHome(LiveServerTestCase):
 
 class invalidLog(LiveServerTestCase):
     def testInvalid(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
         
@@ -37,21 +30,15 @@ class invalidLog(LiveServerTestCase):
 
 class blankLog(LiveServerTestCase):
     def testBlank(self):
-        options = webdriver.ChromeOptions()
-
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
-        options.add_argument('headless')
         driver.find_element_by_class_name('btn-success').click() 
 
 class testSignup(LiveServerTestCase):
 
     def testSign(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/signup/')
 
@@ -70,10 +57,7 @@ class testSignup(LiveServerTestCase):
 class testLogin(LiveServerTestCase):
 
     def testLog(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
 
