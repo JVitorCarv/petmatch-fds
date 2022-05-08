@@ -7,7 +7,12 @@ import time
 class testHome(LiveServerTestCase):
 
     def test(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_options)
 
         driver.get('https://pet-match-fds.herokuapp.com')
 
@@ -16,7 +21,12 @@ class testHome(LiveServerTestCase):
 
 class invalidLog(LiveServerTestCase):
     def testInvalid(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_options)
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
         
@@ -30,7 +40,12 @@ class invalidLog(LiveServerTestCase):
 
 class blankLog(LiveServerTestCase):
     def testBlank(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_options)
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
         driver.find_element_by_class_name('btn-success').click() 
@@ -38,7 +53,12 @@ class blankLog(LiveServerTestCase):
 class testSignup(LiveServerTestCase):
 
     def testSign(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_options)
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/signup/')
 
@@ -57,7 +77,12 @@ class testSignup(LiveServerTestCase):
 class testLogin(LiveServerTestCase):
 
     def testLog(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_options)
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
 
