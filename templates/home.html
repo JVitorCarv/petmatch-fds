@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}PetMatch{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    {% load account %}
+    <h1>Welcome back, {% user_display user %}!</h1>
+</div>
+{% else %}
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>PetMatch</h1>
+    <h3 class="text-muted"> Just as people need connections, so do our pets</h3>
+    <p>PetMatch is a tinder-like matching software for pets. Just as people need connections, so do 
+        our pets, especially after these tough lockdown times, where many pets found themselves feeling 
+        lonely quite often. Hopefully we can help with that :)
+    </p>
+    <a href="accounts/login/" class="btn btn-info btn-dark" role="button">Login</a>
+    <a href="accounts/signup/" class="btn btn-info btn-light" role="button">Register</a>
+</div>
+{% endif %}
+{% endblock %}
