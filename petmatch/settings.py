@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ml8_*p!+%$llspi$e9e3n8r-b6fpa$v1o_=0h!+u$m@2pij^vo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'pet-match-fds.herokuapp.com'
+]
 
 
 # Application definition
