@@ -17,7 +17,7 @@ class testHome(LiveServerTestCase):
         driver.get('https://pet-match-fds.herokuapp.com')
 
         assert 'PetMatch' in driver.title
-        time.sleep(2)
+        time.sleep(1)
 
 class invalidLog(LiveServerTestCase):
     def testInvalid(self):
@@ -37,6 +37,9 @@ class invalidLog(LiveServerTestCase):
         password.send_keys('passwordinvalid')
 
         driver.find_element_by_class_name('btn-success').click() 
+        
+        assert 'Login' in driver.title
+
 
 class blankLog(LiveServerTestCase):
     def testBlank(self):
@@ -49,6 +52,10 @@ class blankLog(LiveServerTestCase):
 
         driver.get('https://pet-match-fds.herokuapp.com/accounts/login/')
         driver.find_element_by_class_name('btn-success').click() 
+
+        time.sleep(1)
+
+        assert 'Login' in driver.title
 
 class testSignup(LiveServerTestCase):
 
@@ -72,7 +79,9 @@ class testSignup(LiveServerTestCase):
         password1.send_keys('momentanio')
         password2.send_keys('momentanio')
         driver.find_element_by_class_name('btn-success').click()
-        time.sleep(2)
+        time.sleep(1)
+
+        assert 'Sign' in driver.title
 
 class testLogin(LiveServerTestCase):
 
@@ -93,7 +102,7 @@ class testLogin(LiveServerTestCase):
         password.send_keys('momentanio')
 
         driver.find_element_by_class_name('btn-success').click()
-
+        time.sleep(1)
 
         add = driver.find_elements_by_class_name('nav-link')
         add[0].click()
@@ -108,10 +117,11 @@ class testLogin(LiveServerTestCase):
         pet_race.send_keys('Mestiço')
         pet_bio.send_keys('Mel gosta de correr pelo parque e morder almofadas')
         driver.find_element_by_class_name('btn-success').click()
-        time.sleep(5)
+        time.sleep(1)
 
         home = driver.find_elements_by_class_name('navbar-brand')
         home[0].click()
-        
+
+        assert 'PetMatch' in driver.title
 
         driver.close()
