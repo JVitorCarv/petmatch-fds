@@ -6,6 +6,8 @@ PetMatch is a tinder-like matching software for pets. Just as people need connec
 
 This project is developed by university students to practice the lessons learned in our Software Development Fundamentals classes.
 
+You can access it on: http://pet-match-fds.herokuapp.com/
+
 Professor: Ricardo Costa
 
 Contributors:
