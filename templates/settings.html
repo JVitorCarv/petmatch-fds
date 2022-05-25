@@ -6,7 +6,9 @@
 {% block content %}
 {% if user.is_authenticated %}
 <h1>Settings</h1>
+<div> <a class="button" href={% url 'petmatchapp:terms' %}>Terms Of Use</a> <div>
 
+<div> <a class="button" href={% url 'petmatchapp:faq' %}>FAQ</a> <div>
 {% else %}
 You can not add a pet without being authorized
 

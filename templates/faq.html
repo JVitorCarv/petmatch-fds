@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1>FAQ</h1>
+<p dir="ltr"><span style="font-size:28px">What is Petmatch?</span><span style="font-size:36px">&nbsp;</span>&nbsp;</p>
+
+<p dir="ltr">PetMatch is a social networking website made for Dogs, that helps dog owners to find the perfect match to their canine son. Each dog owner can register one or more dogs in the website and we will help them to find, based on geolocation, animals that match with the information passed in the searching options, like size, age and distance. Therefore Dog Owners just need to schedule a date for the meeting in the area you prefer, even in your neighborhoods. After creating an account in petmatch, you need to create a profile and add the pets you want, then you can access a feed that will show the dogs that matched with the search information. If any dog interests you, open the owner&#39;s profile and start a chat.</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">How Much Does It Cost?&nbsp;</span></p>
+
+<p dir="ltr">PetMatch is a free website made for learning meanings.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">How Can I Change My Profile?</span></p>
+
+<p dir="ltr">Click on the &quot;My Profile Description&quot; link and select the right option from the drop-down menu. Remember to press &quot;Update&quot; after you make the change.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">How Can I Delete My Account?</span></p>
+
+<p dir="ltr">Yes. You can delete your account any time you want in the profile settings area.</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">What Can I Do If Someone disrespect me?</span></p>
+
+<p dir="ltr">Please inform our support of any problem with other users.&nbsp; We will investigate If the person is acting within a behavior that disrespect our terms and conditions of use.If so, we will suspend temporarily or permanently this user account.</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">How can I reach the support?</span></p>
+
+<p dir="ltr">You can reach us by email @<a href="mailto:suppetmatch@gmail.com" target="_blank">suppetmatch@gmail.com</a>.</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">Is PetMatch Safe?&nbsp;</span></p>
+
+<p dir="ltr">Yes. Like any other socializing app, all the users have to put their phone number and address to register, and this information will be checked and confirmed. Besides that, all the data that we collect is only used for the website matters and your privacy and security are assured.</p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">Is it possible to know if a user is on-line?&nbsp;</span></p>
+
+<p dir="ltr">Yes. In the chat area under the name of the person you can see if it is on-line or offline. Also, if the person is typing a message, you will see the word &quot;Typing&quot;.</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><span style="font-size:28px">How Can I Change The Searching Filters?</span></p>
+
+<p dir="ltr">The searching filters are extremely important, because they are the data that base the creation of your feed and make your dogs matches, so make sure that they are linked with your interest. To change them, you need to access the setting and click on &quot;search filters&quot;, there you can change the distance range of the search, the age of the dog, the gender and their size.</p>
+
+<address>&nbsp;</address>
+
+{% else %}
+You can not add a pet without being authorized
+
+{% endif %} 
+{% endblock %}

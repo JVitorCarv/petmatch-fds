@@ -32,6 +32,14 @@ class SettingsView(ListView):
     model = PetProfile
     template_name = "settings.html"
 
+class TermsOfUseView(ListView):
+    model = PetProfile
+    template_name = "terms.html"
+    
+class FaqView(ListView):
+    model = PetProfile
+    template_name = "faq.html"
+
 class UpdatePet(UpdateView):
     model = PetProfile
     template_name = "update_pet.html"

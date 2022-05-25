@@ -13,11 +13,13 @@ urlpatterns = [
     path("add/", views.AddPetView.as_view(), name="add_pet"),
     path("settings", views.SettingsView.as_view(), name="settings"),
     path("profile", views.profileView.as_view(), name="profile"),
+    path("terms", views.TermsOfUseView.as_view(), name="terms"),
+    path("faq", views.FaqView.as_view(), name="faq"),
 
     #path("pet/edit/<int:pk>", views.UpdateView.as_view(), name="update_pet"),
     #path("pet/delete/<int:pk>", views.DeletePetView.as_view(), name="delete_pet"),
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 

@@ -9,7 +9,12 @@
     {% for PetProfile in object_list %}
         {% if PetProfile.author_id == user.id %}
             <a href="/pet/{{PetProfile.pk}}">{{PetProfile.name}}</a><br>
-            <br/><img src="{{PetProfile.pet_image}}" width="240"></img></br>
+            <p>Name: {{PetProfile.name}}</p>
+            <p>Age: {{PetProfile.age}}</p>
+            <p>Race: {{PetProfile.race}}</p>
+            <p>Bio: {{PetProfile.bio}}</p>
+            <br/><img src="/media/{{PetProfile.pet_image}}" width="240"></img></br>
+            <p>&nbsp&nbsp</p>
 
         {% endif %}
     {% endfor %}
