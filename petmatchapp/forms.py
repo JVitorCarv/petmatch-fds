@@ -7,7 +7,7 @@ from .models import PetProfile
 class PetProfileForm(ModelForm):
      class Meta:
          model = PetProfile
-         fields = ['name', 'author', 'age', 'race', 'bio']
+         fields = ['name', 'author', 'age', 'race', 'bio', 'pet_image']
 
          widgets = {
              'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your pet name!'}),
@@ -15,4 +15,6 @@ class PetProfileForm(ModelForm):
              'age': forms.NumberInput(attrs={'class': 'form-control'}),
              'race': forms.TextInput(attrs={'class': 'form-control'}),
              'bio': forms.TextInput(attrs={'class': 'form-text'}),
+             'image': forms.ImageField(),
+             
          }

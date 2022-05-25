@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from telnetlib import AUTHENTICATION
 
@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ml8_*p!+%$llspi$e9e3n8r-b6fpa$v1o_=0h!+u$m@2pij^vo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'pet-match-fds.herokuapp.com'
+    'pet-match-fds.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -148,3 +149,9 @@ ACCOUNT_SESSION_REMEMBER = True
 
 #django-crispy-forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+#image
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'

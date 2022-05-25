@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    {% load account %}
+    <h1>{% user_display user %} Profile</h1>
+    
+    {% for PetProfile in object_list %}
+        {% if PetProfile.author_id == user.id %}
+            <a href="/pet/{{PetProfile.pk}}">{{PetProfile.name}}</a><br>
+            <br/><img src="{{PetProfile.pet_image}}" width="240"></img></br>
+
+        {% endif %}
+    {% endfor %}
+    <a href="{% url 'petmatchapp:add_pet' %}"
+    <button>Add Pet</button>
+    </a>
+    
+</div>
+{% endblock %}

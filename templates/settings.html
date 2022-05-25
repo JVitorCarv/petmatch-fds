@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Add Pet{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>Settings</h1>
+
+{% else %}
+You can not add a pet without being authorized
+
+{% endif %} 
+{% endblock %}
