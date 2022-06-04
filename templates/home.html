@@ -9,7 +9,7 @@
     <h1>Welcome back, {% user_display user %}!</h1>
     {% for PetProfile in object_list %}
         <a href="/pet/{{PetProfile.pk}}">{{PetProfile.name}}</a> - {{PetProfile.author}}
-
+        <br/><img src="/media/{{PetProfile.pet_image}}" width="240"></img></br>
         <br>
     {% endfor %}
 </div>
