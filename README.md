@@ -16,5 +16,20 @@ Contributors:
 - Diogo Costa
 - Eduardo Fontelles
 - José Vitor Velozo
-- Lucas Gusmão
 - Patrick Catchpole
+
+First Download an IDE (ex: vscode, pycharm, ect) from your selected web browser
+
+Clone the git repository github.com/JVitorCarv/petmatch-fds
+
+Initiate a Virtual Envirioment 
+Type this in the terminal: py -m venv venv 
+
+Locate the virual envirioment inside wherever you placed your project folder
+cd venv/Scripts/
+.\activate
+
+dowload the requirements 
+Type this in the terminal: pip install -r requirements.txt
+
+start editting the project :)
