@@ -104,24 +104,6 @@ class testLogin(LiveServerTestCase):
         driver.find_element_by_class_name('btn-success').click()
         time.sleep(1)
 
-        add = driver.find_elements_by_class_name('nav-link')
-        add[0].click()
-
-        pet_name = driver.find_element_by_id('id_name')
-        pet_age = driver.find_element_by_id('id_age')
-        pet_race = driver.find_element_by_id('id_race')
-        pet_bio = driver.find_element_by_id('id_bio')
-
-        pet_name.send_keys('Mel')
-        pet_age.send_keys('8')
-        pet_race.send_keys('Mestiço')
-        pet_bio.send_keys('Mel gosta de correr pelo parque e morder almofadas')
-        driver.find_element_by_class_name('btn-success').click()
-        time.sleep(1)
-
-        home = driver.find_elements_by_class_name('navbar-brand')
-        home[0].click()
-
         assert 'PetMatch' in driver.title
 
 
